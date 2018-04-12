@@ -1,0 +1,55 @@
+.thumbnails{
+  float: left;
+  width: 70px;
+}
+
+.product-images{
+  display: inline-block;
+}
+
+.product-details{
+  display: inline-block;
+}
+
+.product-thumbnail{
+  width: 67px;
+  height: 73px;
+}
+
+.primary-image-parent{
+  overflow: hidden;
+  height: 557px;
+  width: 557px;
+}
+
+.primary-image{
+  display: inline-block;
+  height: 557px;
+  width: 557px;
+  transition: all 0.3s;
+  max-width: 557px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-image:hover{
+  transform:scale(1.8);
+}
+
+.thumbnail-scroll-button{
+  align-self: center;
+  background: url("back.png") no-repeat;
+  transform: rotate(90deg);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+}
+
+.description{
+  display: block;
+}
+
+.materials{
+  display: none;
+}
