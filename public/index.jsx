@@ -8,11 +8,18 @@ class ProductDetails extends React.Component {
     super(props);
     this.state = {
       product:{
-        description: "This is the damn product of the dang year.",
+        description: `A 100% Supima® cotton T-shirt thick enough to wear on its own or for layering.
+        The luxurious jersey material uses 100% Supima® cotton for a smooth feel, natural brightness and beautiful colors.
+        A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.
+        A narrower seam fold and stitching for a more delicate neckline.
+        With a flattering neckline.`,
         materials: `100% cotton
         Machine washable
         Imported  `,
-        name: "Sweet Eff Ing Shirt"
+        name: "Sweet Eff Ing Shirt",
+        sku: "AOJ23F5",
+        color: "43 Periwinkle",
+        colors: ["color1", "color2"]
       }
     }
   }

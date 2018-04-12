@@ -1,6 +1,15 @@
 .thumbnails{
   float: left;
   width: 70px;
+  height: 450px;
+  overflow-y: hidden;
+}
+
+.thumbnail-parent{
+  width: 80px;
+  margin: 0;
+  display: inline-block;
+  align-content: center;
 }
 
 .product-images{
@@ -20,6 +29,7 @@
   overflow: hidden;
   height: 557px;
   width: 557px;
+  display: inline-block;
 }
 
 .primary-image{
@@ -33,6 +43,16 @@
   padding: 0;
 }
 
+.color{
+  width: 30px;
+  height: 15px;
+  background-color: grey;
+  margin: 2px;
+  border-color: black;
+  border-style: solid;
+  display: inline-block
+}
+
 .primary-image:hover{
   transform:scale(1.8);
 }
@@ -44,6 +64,7 @@
   width: 32px;
   height: 32px;
   background-size: cover;
+  display: block;
 }
 
 .description{
@@ -52,4 +73,20 @@
 
 .materials{
   display: none;
+}
+
+.reviewbg{
+  background-color: red;
+  width:565px;
+  height: 130px;
+  transform-origin: left;
+  transform: scalex(0.5);
+  float: left;
+}
+
+.review{
+  background-image: url('stars.png');
+  width: 570px;
+  height: 135px;
+  float: left;
 }

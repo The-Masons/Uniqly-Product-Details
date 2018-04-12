@@ -8,9 +8,11 @@ class Thumbnails extends React.Component {
       return <Thumbnail handleClick={this.props.handleClick} image={image} key={index}/>
     })
     return (
-      <div className="thumbnails">
+      <div className="thumbnail-parent">
         <button className="thumbnail-scroll-button"></button>
-          {result}
+          <div className="thumbnails">
+            {result}
+          </div>
         <button className="thumbnail-scroll-button bottom"></button>
       </div>
     );
