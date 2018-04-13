@@ -10,7 +10,7 @@ class PrimaryImage extends React.Component {
   moveImage(event) {
     if (this.state.mouseOver) {
       const tolerance = 80;
-      var par = document.getElementById('primary-image-parent').getBoundingClientRect();
+      const par = document.getElementById('primary-image-parent').getBoundingClientRect();
       const xDist = par.width;
       const yDist = par.height;
       let relX = -(event.screenX - par.left) + xDist / 2;
