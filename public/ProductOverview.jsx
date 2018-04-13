@@ -5,7 +5,7 @@ class ProductOverview extends React.Component {
 
   render() {
     const prod = this.props.product;
-    let colors = prod.colors.map((color, index) => {
+    const colors = prod.colors.map((color, index) => {
       return <Color color={color} key={index}/>
     })
     return (
