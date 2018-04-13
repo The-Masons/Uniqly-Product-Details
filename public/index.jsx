@@ -19,7 +19,8 @@ class ProductDetails extends React.Component {
         name: "Sweet Eff Ing Shirt",
         sku: "AOJ23F5",
         color: "43 Periwinkle",
-        colors: ["color1", "color2"]
+        colors: ["color1", "color2"],
+        price: '$9.99'
       }
     }
   }

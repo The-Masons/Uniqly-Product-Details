@@ -3,28 +3,22 @@ class PrimaryImage extends React.Component {
     super(props);
     this.state = {
       mouseOver: false,
-      mouseX: 0,
-      mouseY: 0
     }
     this.moveImage = this.moveImage.bind(this);
   }
 
-  moveImage(event){
+  moveImage(event) {
     if (this.state.mouseOver) {
-      const offset = -250;
-      this.setState({
-        mouseX: event.screenX,
-        mouseY: event.screenY
-      })
-      let transX = this.state.mouseX + offset;
-      let transY = this.state.mouseY + offset;
-      var parentOffset = document.getElementById('primary-image-parent').getBoundingClientRect();
-      console.log(parentOffset);
-      var relX = event.screenX - parentOffset.left;
-      var relY = event.screenY - parentOffset.top;
-      console.log(relX, relY)
-      let transformText = `translate(${relX}px, ${relY}px) scale(1.8)`;
-      document.getElementById('primary-image').style.transform = transformText;
+      const tolerance = 80;
+      var par = document.getElementById('primary-image-parent').getBoundingClientRect();
+      let xDist = par.width;
+      let yDist = par.height;
+      let relX = -(event.screenX - par.left) + xDist / 2;
+      let relY = -(event.screenY - par.top) + yDist / 2;
+
+      document.getElementById('primary-image').style.transform = `scale(2)`;
+      document.getElementById('primary-image').style.top = relY + 'px';
+      document.getElementById('primary-image').style.left = relX + 'px';
     }
   }
 
@@ -34,15 +28,19 @@ class PrimaryImage extends React.Component {
     })
     var transformText = `scale(1)`
     document.getElementById('primary-image').style.transform = transformText;
+    document.getElementById('primary-image').style.top = '0px';
+    document.getElementById('primary-image').style.left = '0px';
   }
 
   render() {
     return (
-      <div className="primary-image-parent" id="primary-image-parent">
+      <div className="primary-image-parent" 
+      id="primary-image-parent"
+      onMouseMove={(event) => this.moveImage(event)}
+      onMouseEnter={() => this.setState({mouseOver: true})}
+      onMouseLeave={(event) => this.mouseExit(event)}>
+
         <img
-        onMouseEnter={() => this.setState({mouseOver: true})}
-        onMouseLeave={(event) => this.mouseExit(event)}
-        onMouseMove={(event) => this.moveImage(event)}
         className="primary-image" 
         id="primary-image"
         src={this.props.image}/>
