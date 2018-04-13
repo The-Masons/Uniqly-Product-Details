@@ -11,12 +11,12 @@ class PrimaryImage extends React.Component {
     if (this.state.mouseOver) {
       const tolerance = 80;
       var par = document.getElementById('primary-image-parent').getBoundingClientRect();
-      let xDist = par.width;
-      let yDist = par.height;
+      const xDist = par.width;
+      const yDist = par.height;
       let relX = -(event.screenX - par.left) + xDist / 2;
       let relY = -(event.screenY - par.top) + yDist / 2;
 
-      document.getElementById('primary-image').style.transform = `scale(2)`;
+      document.getElementById('primary-image').style.transform = 'scale(2)';
       document.getElementById('primary-image').style.top = relY + 'px';
       document.getElementById('primary-image').style.left = relX + 'px';
     }
@@ -26,8 +26,7 @@ class PrimaryImage extends React.Component {
     this.setState({
       mouseOver: false
     })
-    var transformText = `scale(1)`
-    document.getElementById('primary-image').style.transform = transformText;
+    document.getElementById('primary-image').style.transform = 'scale(1)';
     document.getElementById('primary-image').style.top = '0px';
     document.getElementById('primary-image').style.left = '0px';
   }
