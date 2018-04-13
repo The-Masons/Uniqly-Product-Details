@@ -38,7 +38,7 @@ class ProductDetails extends React.Component {
 class ProductImages extends React.Component {
   constructor(props) {
     super(props);
-    var images = ["https://i.ytimg.com/vi/5G5Gv-c4lsY/maxresdefault.jpg",
+    const images = ["https://i.ytimg.com/vi/5G5Gv-c4lsY/maxresdefault.jpg",
     "http://images2.fanpop.com/image/photos/8800000/NYR-3-new-york-rangers-8836300-1024-768.jpg",
     "https://www.denverpost.com/wp-content/uploads/2018/01/nathan-mackinnon-vs-rangers.jpg?w=489",
     "https://media.gq.com/photos/5583ca8f3655c24c6c96de8f/master/w_800/style-blogs-the-gq-eye-ny-rangers-fb-shot.jpg",
