@@ -18,6 +18,7 @@
 
 .product-details{
   display: inline-block;
+  max-width: 400px;
 }
 
 .product-thumbnail{
@@ -36,7 +37,7 @@
   display: inline-block;
   height: 557px;
   width: 557px;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
   max-width: 557px;
   box-sizing: border-box;
   margin: 0;
