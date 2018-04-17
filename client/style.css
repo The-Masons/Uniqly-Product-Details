@@ -1,8 +1,19 @@
+body{
+  /* font-family: 'Yantramanav', sans-serif; */
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
 .thumbnails{
   float: left;
   width: 70px;
   height: 450px;
   overflow-y: hidden;
+}
+
+.product-name{
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .thumbnail-parent{
@@ -21,9 +32,29 @@
   max-width: 400px;
 }
 
+.sku{
+  text-transform: uppercase;
+  color:#ccc;
+  font-size: 12px;
+}
+
 .product-thumbnail{
   width: 67px;
   height: 73px;
+}
+
+.product-price{
+  font-size: 24px;
+}
+
+.color-label{
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.size-chart{
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .primary-image-parent{
@@ -37,13 +68,12 @@
   display: inline-block;
   height: 557px;
   width: 557px;
-  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
   position: relative;
 }
 
-.color{
+.product-color{
   width: 30px;
   height: 15px;
   background-color: grey;
@@ -55,6 +85,13 @@
 
 .primary-image:hover{
   transform:scale(1.8);
+}
+
+.button{
+  color: red;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .thumbnail-scroll-button{

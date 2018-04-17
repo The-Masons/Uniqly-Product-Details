@@ -17,10 +17,12 @@ class ProductDetails extends React.Component {
         Machine washable
         Imported  `,
         name: "Sweet Eff Ing Shirt",
-        sku: "AOJ23F5",
+        id: "AOJ23F5",
         color: "43 Periwinkle",
         colors: ["color1", "color2"],
-        price: '$9.99'
+        price: '$9.99',
+        reviewScore: 4.2,
+        reviewCount: 8
       }
     }
   }

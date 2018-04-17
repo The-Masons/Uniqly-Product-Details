@@ -8,17 +8,29 @@ class ProductOverview extends React.Component {
     const colors = prod.colors.map((color, index) => {
       return <Color color={color} key={index}/>
     })
+    let stars;
+    let reviewText;
+    if(prod.reviewCount > 0){
+      stars = Math.floor(prod.reviewScore);
+      reviewText = prod.reviewCount + " reviews";
+    } else {
+      stars = 0;
+      reviewText = "write the first review";
+    }
     return (
       <div>
-          <button className="save">Save</button>
-          <button className="share">Share</button>
-          <h1>{prod.name}</h1>
-          <div>{prod.sku}</div>
-          <div>{prod.price}</div>
-          <div>Color: {prod.color}</div>
+          <div className="button">Save</div>
+          <div className="button">Share</div>
+          <div className="product-name">{prod.name}</div>
+          <div className="sku">sku# {prod.id}</div>
+          <img src={`stars_${stars}.png`}/>
+          <div>{reviewText}</div>
+          <div className="product-price">{prod.price}</div>
+          <div className="color-label">Color: {prod.color}</div>
             <div className="product-colors">
               {colors}
             </div>
+          <div className="size-chart">size chart</div>
       </div>
     );
   }
@@ -39,7 +51,7 @@ class Color extends React.Component {
 
   render() {
     return (
-      <div className="color"/>
+      <div className="product-color"/>
     );
   }
 }
