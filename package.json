@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "uniqly-product-details",
   "version": "",
   "description": "",
   "author": "",
@@ -7,13 +7,17 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
+    "pg": "^7.4.1",
     "request": "^2.85.0"
   },
   "devDependencies": {

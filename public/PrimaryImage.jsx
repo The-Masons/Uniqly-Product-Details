@@ -13,8 +13,8 @@ class PrimaryImage extends React.Component {
       const par = document.getElementById('primary-image-parent').getBoundingClientRect();
       const xDist = par.width;
       const yDist = par.height;
-      let relX = -(event.screenX - par.left) + xDist / 2;
-      let relY = -(event.screenY - par.top) + yDist / 2;
+      let relX = -(event.clientX - par.left) + xDist / 2;
+      let relY = -(event.clientY - par.top) + yDist / 2;
 
       document.getElementById('primary-image').style.transform = 'scale(2)';
       document.getElementById('primary-image').style.top = relY + 'px';
