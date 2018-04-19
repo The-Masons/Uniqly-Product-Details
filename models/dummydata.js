@@ -88,51 +88,12 @@ populateImageTable = () => {
     var name = getRandomProductName();
     const text = 'INSERT INTO images VALUES ($1, $2, $3, $4, $5)';
     const colInd = Math.floor(Math.random() * colors.length);
-    const values = [i, `https://source.unsplash.com/30x15/?${colors[colInd]}`, colInd, Math.floor(Math.random() * productCount), true];
+    const values = [i, `https://source.unsplash.com/557x557/?${colors[colInd]}`, colInd, Math.floor(Math.random() * productCount), true];
     db.insert(text, values, (err, data) => {
       console.log(err, data);
     });
   }
 }
-
-//names
-//id
-//product name
-
-//colors
-//id
-//name
-//color image
-
-//id
-//image
-//color id
-//name id
-//isPrimary
-
-//products
-//id
-//name id
-//color id
-//price
-//description
-//material
-
-//products_sizes
-//product id
-//size id
-//qty
-
-//sizes
-//id
-//name
-
-//ratings
-//id
-//product id
-//rating
-
-let products = [];
 
 GenerateRandomProduct = () => {
   let product = {};
