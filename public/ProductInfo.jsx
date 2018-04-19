@@ -1,11 +1,11 @@
-class ProductDescription extends React.Component {
+class ProductInfo extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="desc-mat-container">
+      <div className="product-info">
         <div className="description">
           {this.props.description}
         </div>
@@ -17,4 +17,4 @@ class ProductDescription extends React.Component {
   }
 }
 
-export default ProductDescription;
+export default ProductInfo;

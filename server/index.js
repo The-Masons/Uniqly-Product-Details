@@ -6,12 +6,8 @@ app.use(parser.text());
 app.use(parser.json());
 app.use(express.static(__dirname + '/../client'));
 
-app.post('/', function (req, res) {
-
-});
-
-app.get('/', function (req, res) {
-
+app.get('/products/:productid', function (req, res) {
+  console.log(req.params);
 });
 
 let port = 3003;

@@ -18,13 +18,17 @@ class ProductOverview extends React.Component {
       reviewText = "write the first review";
     }
     return (
-      <div>
-          <div className="button">Save</div>
+      <div className="product-content">
+        <div className="product-actions">
           <div className="button">Share</div>
+          <div className="button">Save</div>
+        </div>
           <div className="product-name">{prod.name}</div>
           <div className="sku">sku# {prod.id}</div>
-          <img src={`stars_${stars}.png`}/>
-          <div>{reviewText}</div>
+          <div className="reviews_img">
+            <img src={`stars_${stars}.png`}/>
+          </div> 
+          <span>{reviewText}</span>
           <div className="product-price">{prod.price}</div>
           <div className="color-label">Color: {prod.color}</div>
             <div className="product-colors">
@@ -37,12 +41,6 @@ class ProductOverview extends React.Component {
 }
 
 export default ProductOverview;
-
-// Reviews for later
-// <div className="review-parent">
-// <div className="reviewbg"></div>
-// <img className="review"/>
-// </div>
 
 class Color extends React.Component {
   constructor(props) {

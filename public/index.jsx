@@ -1,7 +1,7 @@
 import Thumbnails from './Thumbnails.jsx';
 import PrimaryImage from './PrimaryImage.jsx';
-import ProductDescription from './ProductDescription.jsx';
-import ProductOverview from './ProductOverview.jsx';
+import ProductInfo from './ProductInfo.jsx';
+import ProductContent from './ProductContent.jsx';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -27,11 +27,18 @@ class ProductDetails extends React.Component {
     }
   }
 
+  componentDidMount(){
+    //do your get request here
+    this.setState({
+      product: prod
+    })
+  }
+
   render() {
     return (
       <div>
-        <ProductOverview product={this.state.product}/>
-        <ProductDescription description={this.state.product.description} materials={this.state.product.materials}/>
+        <ProductContent product={this.state.product}/>
+        <ProductInfo description={this.state.product.description} materials={this.state.product.materials}/>
       </div>
     );
   }
