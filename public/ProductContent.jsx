@@ -29,7 +29,7 @@ class ProductOverview extends React.Component {
             <img src={`stars_${stars}.png`}/>
           </div> 
           <span>{reviewText}</span>
-          <div className="product-price">{prod.price}</div>
+          <div className="product-price">${prod.price}.99</div>
           <div className="color-label">Color: {prod.color}</div>
             <div className="product-colors">
               {colors}
