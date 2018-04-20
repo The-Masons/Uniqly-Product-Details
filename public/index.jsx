@@ -13,11 +13,11 @@ class ProductDetails extends React.Component {
         A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.
         A narrower seam fold and stitching for a more delicate neckline.
         With a flattering neckline.`,
-        materials: `100% cotton
+        material: `100% cotton
         Machine washable
         Imported  `,
-        name: "Sweet Eff Ing Shirt",
-        id: "AOJ23F5",
+        product_name: "Sweet Eff Ing Shirt",
+        sku: "AOJ23F5",
         color: "43 Periwinkle",
         colors: ["color1", "color2"],
         price: '$9.99',
@@ -28,17 +28,20 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount(){
-    //do your get request here
-    this.setState({
-      product: prod
-    })
+    fetch('/products/0')
+      .then(function(response) {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
   }
 
   render() {
     return (
       <div>
         <ProductContent product={this.state.product}/>
-        <ProductInfo description={this.state.product.description} materials={this.state.product.materials}/>
+        <ProductInfo description={this.state.product.description} materials={this.state.product.material}/>
       </div>
     );
   }
@@ -66,6 +69,19 @@ class ProductImages extends React.Component {
     this.setState({
       primaryImage: image
     })
+  }
+
+  componentDidMount() {
+    fetch('/products/5/images')
+      .then(function(response) {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          images: data,
+          primaryImage: data[0]
+        })
+      })
   }
 
   render() {

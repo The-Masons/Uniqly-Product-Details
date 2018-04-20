@@ -8,6 +8,7 @@ const modifiers = ['camo', 'cargo', 'khaki', 'denim', 'plaid', 'corduroy'];
 const clothingType = ['shirt', 'dress', 'pants', 'shorts', 'skirt', 'tank top', 'socks'];
 const maxRating = 5;
 const colors = ['red', 'green', 'blue', 'yellow', 'grey', 'black', 'white'];
+const skuLength = 7;
 
 
 populateDBWithRandomData = () => {
@@ -27,9 +28,6 @@ clearDB = () => {
   db.query('delete from ratings where id >= 0');
   db.query('delete from sizes where id >= 0');
 }
-
-const text = 'INSERT INTO users(name, email) VALUES($1, $2) RETURNING *'
-const values = ['brianc', 'brian.m.carlson@gmail.com']
 
 populateColorTable = () => {
   for(var i = 0; i < colors.length; i++) {
@@ -74,9 +72,10 @@ populateNameTable = () => {
 
 populateProductTable = () => {
   for(var i = 0; i < productCount; i++) {
-    var name = getRandomProductName();
-    const text = 'INSERT INTO products VALUES ($1, $2, $3, $4, $5, $6)';
-    const values = [i, Math.floor(Math.random() * productCount), Math.floor(Math.random() * colors.length), Math.floor(Math.random() * 500), 'lorem ipsum', 'diet coke'];
+    const name = getRandomProductName();
+    const text = 'INSERT INTO products VALUES ($1, $2, $3, $4, $5, $6, $7)';
+    const sku = getRandomSku();
+    const values = [i, Math.floor(Math.random() * productCount), Math.floor(Math.random() * colors.length), Math.floor(Math.random() * 500), 'lorem ipsum', 'diet coke', sku];
     db.insert(text, values, (err, data) => {
       console.log(err, data);
     });
@@ -85,13 +84,16 @@ populateProductTable = () => {
 
 populateImageTable = () => {
   for(var i = 0; i < productCount; i++) {
-    var name = getRandomProductName();
-    const text = 'INSERT INTO images VALUES ($1, $2, $3, $4, $5)';
-    const colInd = Math.floor(Math.random() * colors.length);
-    const values = [i, `https://source.unsplash.com/557x557/?${colors[colInd]}`, colInd, Math.floor(Math.random() * productCount), true];
-    db.insert(text, values, (err, data) => {
-      console.log(err, data);
-    });
+    let imageCount = Math.floor(Math.random() * 8);
+    imageCount = imageCount < 1 ? 1 : imageCount;
+    for (var j = 0; j < imageCount; j++) {
+      const text = 'INSERT INTO images VALUES ($1, $2, $3, $4, $5)';
+      const colInd = Math.floor(Math.random() * colors.length);
+      const values = [i, `https://source.unsplash.com/557x557/?${colors[colInd]}`, colInd, Math.floor(Math.random() * productCount), true];
+      db.insert(text, values, (err, data) => {
+        console.log(err, data);
+      });
+    }
   }
 }
 
@@ -114,7 +116,7 @@ getRandomProductName = () => {
 }
 
 getRandomColors = (count) => {
-  var result = [];
+  let result = [];
   for(var i = 0; i < count; i++) {
     let index = 0;
     do{
@@ -123,6 +125,18 @@ getRandomColors = (count) => {
     result.push(colors[index]);
   }
   return result;
+}
+
+getRandomSku = () => {
+  let result = ''
+  for(var i = 0; i < skuLength; i++) {
+    if(i === 0 || Math.random() > 0.5) {
+      result += String.fromCharCode(Math.floor(Math.random() * 26 + 70));
+    } else {
+      result += Math.floor(Math.random() * 10);
+    }
+  }
+  return result;  
 }
 
 clearDB();

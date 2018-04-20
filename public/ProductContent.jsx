@@ -23,8 +23,8 @@ class ProductOverview extends React.Component {
           <div className="button">Share</div>
           <div className="button">Save</div>
         </div>
-          <div className="product-name">{prod.name}</div>
-          <div className="sku">sku# {prod.id}</div>
+          <div className="product-name">{prod.product_name}</div>
+          <div className="sku">sku# {prod.sku}</div>
           <div className="reviews_img">
             <img src={`stars_${stars}.png`}/>
           </div> 
