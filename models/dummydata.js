@@ -13,11 +13,21 @@ const skuLength = 7;
 
 populateDBWithRandomData = () => {
   populateColorTable();
+  console.log('color populated');
   populateNameTable();
+  console.log('name populated');
   populateProductTable();
+  console.log('product populated');
   populateImageTable();
+  console.log('image populated');
   populateSizeTable();
+  console.log('size populated');
   populateRatingsTable();
+  console.log('ratings populated');
+  populateProdColorTable();
+  console.log('prodcolor populated');
+  populateProdSizeTable();
+  console.log('prodsize populated');
 }
 
 clearDB = () => {
@@ -27,6 +37,8 @@ clearDB = () => {
   db.query('delete from images where id >= 0');
   db.query('delete from ratings where id >= 0');
   db.query('delete from sizes where id >= 0');
+  db.query('delete from product_sizes where id >= 0');
+  db.query('delete from product_colors where id >= 0');
 }
 
 populateColorTable = () => {
@@ -41,8 +53,8 @@ populateColorTable = () => {
 
 populateRatingsTable = () => {
   for(var i = 0; i < productCount; i++) {
-    const text = 'INSERT INTO ratings VALUES ($1, $2, $3)';
-    const values = [i, Math.floor(Math.random() * maxRating), i];
+    const text = 'INSERT INTO ratings VALUES ($1, $2, $3, $4)';
+    const values = [i, Math.floor(Math.random() * maxRating), i, Math.floor(Math.random() * 1000)];
     db.insert(text, values, (err, data) => {
       console.log(err, data);
     });
@@ -70,6 +82,32 @@ populateNameTable = () => {
   }
 }
 
+populateProdColorTable = () => {
+  for(var i = 0; i < productCount; i++) {
+    const availableColors = Math.floor(Math.random() * colorCount);
+    for(var j = 0; j < availableColors; j++){
+      const text = 'INSERT INTO product_colors VALUES ($1, $2, $3)';
+      const values = [i + j, i, j];
+      db.insert(text, values, (err, data) => {
+        console.log(err, data);
+      });
+    }
+  }
+}
+
+populateProdSizeTable = () => {
+  for(var i = 0; i < productCount; i++) {
+    const availableSizes = Math.floor(Math.random() * sizes.length);
+    for(var j = 0; j < availableSizes; j++) {
+      const text = 'INSERT INTO product_sizes VALUES ($1, $2, $3)';
+      const values = [i + j, i, j];
+      db.insert(text, values, (err, data) => {
+        console.log(err, data);
+      });
+    }
+  }
+}
+
 populateProductTable = () => {
   for(var i = 0; i < productCount; i++) {
     const name = getRandomProductName();
@@ -89,7 +127,8 @@ populateImageTable = () => {
     for (var j = 0; j < imageCount; j++) {
       const text = 'INSERT INTO images VALUES ($1, $2, $3, $4, $5)';
       const colInd = Math.floor(Math.random() * colors.length);
-      const values = [i, `https://source.unsplash.com/557x557/?${colors[colInd]}`, colInd, Math.floor(Math.random() * productCount), true];
+      const isPrimary = j === 0 ? true : false;
+      const values = [i, `https://source.unsplash.com/557x557/?${colors[colInd]}`, colInd, Math.floor(Math.random() * productCount), isPrimary];
       db.insert(text, values, (err, data) => {
         console.log(err, data);
       });
@@ -118,11 +157,15 @@ getRandomProductName = () => {
 getRandomColors = (count) => {
   let result = [];
   for(var i = 0; i < count; i++) {
-    let index = 0;
-    do{
-      index = Math.random() * colors.length
-    }while(result.includes(colors[index]))
-    result.push(colors[index]);
+    result.push(colors[i]);
+  }
+  return result;
+}
+
+getRandomSizes = (count) => {
+  let result = [];
+  for(var i = 0; i < count; i++) {
+    result.push(sizes[i]);
   }
   return result;
 }

@@ -5,14 +5,14 @@ class ProductOverview extends React.Component {
 
   render() {
     const prod = this.props.product;
-    const colors = prod.colors.map((color, index) => {
-      return <Color color={color} key={index}/>
+    const colors = this.props.colors.map((color, index) => {
+      return <Color color={color.name} key={index} img={color.img_url}/>
     })
     let stars;
     let reviewText;
-    if(prod.reviewCount > 0){
-      stars = Math.floor(prod.reviewScore);
-      reviewText = prod.reviewCount + " reviews";
+    if(prod.reviewcount > 0){
+      stars = Math.floor(prod.reviewscore);
+      reviewText = prod.reviewcount + " reviews";
     } else {
       stars = 0;
       reviewText = "write the first review";
