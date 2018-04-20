@@ -19,11 +19,11 @@ class ProductDetails extends React.Component {
         product_name: "Sweet Eff Ing Shirt",
         sku: "AOJ23F5",
         color: "43 Periwinkle",
-        colors: ["color1", "color2"],
         price: '$9.99',
-        reviewScore: 4.2,
-        reviewCount: 8
-      }
+        reviewscore: 4.2,
+        reviewcount: 8
+      },
+      colors: []
     }
   }
 
@@ -34,13 +34,27 @@ class ProductDetails extends React.Component {
       })
       .then((data) => {
         console.log(data);
+        this.setState({
+          product: data
+        })
       })
+
+      fetch('/products/0/colors')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          this.setState({
+            colors: data
+          })
+        })
   }
 
   render() {
     return (
       <div>
-        <ProductContent product={this.state.product}/>
+        <ProductContent product={this.state.product} colors={this.state.colors}/>
         <ProductInfo description={this.state.product.description} materials={this.state.product.material}/>
       </div>
     );
