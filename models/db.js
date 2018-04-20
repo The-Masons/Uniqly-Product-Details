@@ -26,8 +26,8 @@ const queryDatabase = (query, cb) => {
   pool.connect()
     .then(client => {
       return client.query(query)
-      .then(res => console.log(res.rows[0]))
-      .catch(e => console.error(e.stack))
+      .then(res => cb(null, res))
+      .catch(e => cb(e, null))
     })
 }
 
@@ -38,10 +38,6 @@ const client = new Client({
   port: 5432,
 })
 client.connect();
-
-queryDatabase('select * from colors', (err, data) => {
-  console.log(err, data);
-})
 
 module.exports.query = queryDatabase;
 module.exports.insert = insertIntoDatabase;

@@ -42,7 +42,7 @@ class PrimaryImage extends React.Component {
         <img
         className="primary-image" 
         id="primary-image"
-        src={this.props.image}/>
+        src={this.props.image.img_url}/>
       </div>
     );
   }

@@ -26,7 +26,7 @@ class Thumbnail extends React.Component {
         <img
         className="product-thumbnail" 
         onClick={() => this.props.handleClick(this.props.image)}
-        src={this.props.image}/>
+        src={this.props.image.img_url}/>
       </div>
     )
   }
