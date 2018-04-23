@@ -1,4 +1,4 @@
-# Project Name
+# Uniqly Product Details
 
 The photos and product details components for the uniqly product page.
 
