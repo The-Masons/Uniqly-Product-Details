@@ -20,21 +20,33 @@ class ProductOverview extends React.Component {
     return (
       <div className="product-content">
         <div className="product-actions">
-          <div className="button">Share</div>
-          <div className="button">Save</div>
+          <div className="social-sharing">
+            <span className="share-button">Share</span>
+            <span className="button-divider">|</span>
+            <span className="save-button">Save</span>
+          </div>
         </div>
           <div className="product-name">{prod.product_name}</div>
           <div className="sku">sku# {prod.sku}</div>
-          <div className="reviews_img">
-            <img src={`stars_${stars}.png`}/>
-          </div> 
-          <span>{reviewText}</span>
+          <div className="review-parent">
+            <div className="reviews_img">
+              <img src={`stars_${stars}.png`}/>
+            </div> 
+            <span className="review-text">{reviewText}</span>
+          </div>
           <div className="product-price">${prod.price}.99</div>
-          <div className="color-label">Color: {prod.color}</div>
-            <div className="product-colors">
-              {colors}
+          <div className="color-parent">
+            <span className="color-label">Color:</span> <span className="current-color">{prod.color}</span>
+              <div className="product-colors">
+                {colors}
+              </div>
+          </div>
+          <div className="size-chart-section">
+            <div className="size-chart-parent">
+            <img src="size_chart.png" />
+              <div className="size-chart-text">SIZE CHART</div>
             </div>
-          <div className="size-chart">size chart</div>
+          </div>
       </div>
     );
   }

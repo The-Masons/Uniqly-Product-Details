@@ -3,6 +3,8 @@ class Thumbnails extends React.Component {
     super(props);
   }
 
+//if there are more less than 7 images hide the arrows
+
   render() {
     var result = this.props.images.map((image, index) => {
       return <Thumbnail handleClick={this.props.handleClick} image={image} key={index}/>
