@@ -16,10 +16,10 @@ class ProductDetails extends React.Component {
         material: `100% cotton
         Machine washable
         Imported  `,
-        product_name: "Sweet Eff Ing Shirt",
+        product_name: "Women JWA EXTRA FINE COTTON SHIRT STRIPE LONG-SLEEVE DRESS",
         sku: "AOJ23F5",
         color: "43 Periwinkle",
-        price: '$9.99',
+        price: '9',
         reviewscore: 4.2,
         reviewcount: 8
       },
@@ -28,18 +28,18 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount(){
-    fetch('/products/0')
-      .then(function(response) {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        this.setState({
-          product: data
-        })
-      })
+    // fetch('/products/1')
+    //   .then(function(response) {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     this.setState({
+    //       product: data
+    //     })
+    //   })
 
-      fetch('/products/0/colors')
+      fetch('/products/1/colors')
         .then((response) => {
           return response.json();
         })
@@ -86,7 +86,7 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/products/5/images')
+    fetch('/products/1/images')
       .then(function(response) {
         return response.json();
       })

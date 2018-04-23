@@ -13,6 +13,8 @@ body{
   text-transform: uppercase;
   font-size: 32px;
   font-weight: 600;
+  width: 407px;
+  display: inline-block
 }
 
 .thumbnail-parent{
@@ -26,9 +28,54 @@ body{
   display: inline-block;
 }
 
+.detail-header1{
+  border-bottom-color: grey;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: block;
+  float: left;
+  width: 203.5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.detail-header2{
+  border-bottom-color: grey;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: block;
+  float: left;
+  width: 203.5px;
+  cursor: pointer;
+  text-indent: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.detail-header-selected{
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+}
+
+.tab-content{
+  clear: both;
+}
+
+.share-save-sep{
+  line-height: 22px;
+  margin: 0;
+  text-align: right;
+}
+
 .product-details{
   display: inline-block;
-  max-width: 400px;
+  width: 416px;
+  vertical-align: top;
+  text-align: left;
 }
 
 .sku{
@@ -37,6 +84,8 @@ body{
   font-size: 12px;
   line-height: 20px;
   align-content: flex-start;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .product-thumbnail{
@@ -45,19 +94,65 @@ body{
 }
 
 .product-price{
-  font-size: 24px;
+  font-size: 32px;
   text-align: left;
   display: block;
+  float: left;
+  clear: both;
+  margin-bottom: 10px;
 }
 
 .color-label{
   text-transform: uppercase;
   font-size: 12px;
+  font-weight: 600;
+  padding-top: 9px;
+  float: left; 
+  line-height: 16px;
+  padding-left: 3px;
 }
 
-.size-chart{
+.current-color{
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-top: 9px;
+  float: left;
+  line-height: 16px;
+}
+
+.color-parent{
+  clear: both;
+  border-top-color: rgb(190,190,190);
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-bottom: 8px;
+  border-bottom-color: rgb(190,190,190);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.size-chart-section{
   text-transform: uppercase;
   font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.size-chart-parent{
+  width: 108.016px;
+  border-right-color: rgb(190,190,190);
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.size-chart-text{
+  margin-right: 10px;
+  width: auto;
+  border-bottom-color: rgb(190,190,190);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  float: right;
 }
 
 .primary-image-parent{
@@ -76,6 +171,12 @@ body{
   position: relative;
 }
 
+.product-content{
+  display: block;
+  height: 407px;
+  width: 407px;
+}
+
 .product-color{
   width: 30px;
   height: 15px;
@@ -83,25 +184,62 @@ body{
   margin: 2px;
   border-color: black;
   border-style: solid;
-  display: inline-block
+  display: inline-block;
+}
+
+.product-colors{
+  clear: both;
+  margin-top: 3px;
 }
 
 .primary-image:hover{
   transform:scale(1.8);
+  cursor: crosshair;
+}
+
+.social-sharing{
+  display: inline-block;
+  float: left;
 }
 
 .product-actions{
   display: inline-block;
   text-align: left;
+  float: right;
   clear: both;
+  display: table;
 }
 
-.button{
+.save-button{
   float: right;
   color: red;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
+  width: 30px;
+  height: 21px;
+  display: inline-block;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.button-divider{
+  display: inline-block;
+  float: right;
+  font-size: 12px;
+}
+
+.share-button{
+  float: right;
+  color: red;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  width: 30px;
+  height: 21px;
+  display: inline-block;
+  margin-left: 4px;
+  cursor: pointer;
 }
 
 .thumbnail-scroll-button{
@@ -125,8 +263,21 @@ body{
 .reviews_img{
   display: block;
   float: left;
-  width: 186px;
+  width: 142px;
+  height: 28px;
   text-align: left;
+  text-transform: uppercase;
+}
+
+.review-text{
+  text-transform: uppercase;
+  font-size: 12px;
+  text-decoration-style: solid;
+  text-decoration-color: black;
+  cursor: pointer;
+  border-bottom-color: rgb(190,190,190);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
 }
 
 .reviewbg{
@@ -143,4 +294,9 @@ body{
   width: 570px;
   height: 135px;
   float: left;
+}
+
+.review-parent{
+  margin-bottom: 10px;
+  line-height: 24px;
 }
