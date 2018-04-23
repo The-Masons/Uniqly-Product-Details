@@ -77,11 +77,25 @@ class ProductImages extends React.Component {
       primaryImage: images[0],
     }
     this.handleClick = this.handleClick.bind(this);
+    this.changePrimaryImage = this.changePrimaryImage.bind(this);
   }
 
   handleClick(image){
     this.setState({
       primaryImage: image
+    })
+  }
+
+  changePrimaryImage(change){
+    let index = this.state.images.indexOf(this.state.primaryImage) + change;
+    if (index < 0) {
+      index = this.state.images.length - 1;
+    } else if (index >= this.state.images.length) {
+      index = 0;
+    }
+    let newImage = this.state.images[index];
+    this.setState({
+      primaryImage: newImage
     })
   }
 
@@ -100,9 +114,9 @@ class ProductImages extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="product-image-container">
         <Thumbnails handleClick={this.handleClick} images={this.state.images}/>
-        <PrimaryImage image={this.state.primaryImage}/>
+        <PrimaryImage image={this.state.primaryImage} handleChangeImage={this.changePrimaryImage}/>
       </div>
     );
   }

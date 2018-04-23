@@ -22,6 +22,7 @@ body{
   margin: 0;
   display: inline-block;
   align-content: center;
+  float: left;
 }
 
 .product-images{
@@ -156,11 +157,40 @@ body{
   cursor: pointer;
 }
 
+.product-image-container{
+  width: 844px;
+}
+
 .primary-image-parent{
   overflow: hidden;
   height: 557px;
   width: 557px;
   display: inline-block;
+  float:left;
+}
+
+.primary-image-section{
+  width:760;
+  height: 557px;
+  float: left;
+}
+
+.last-image-button{
+  float: left;
+  margin-top: 40%;
+  height: 40px;
+  width: 35px;
+  background-size: contain;
+  opacity: 0;
+}
+
+.next-image-button{
+  transform: rotateZ(180deg);
+  margin-top: 40%;
+  height: 40px;
+  width: 35px;
+  background-size: contain;
+  opacity: 0;
 }
 
 .primary-image{
