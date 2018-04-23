@@ -2,13 +2,16 @@ class PrimaryImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mouseOver: false,
+      mouseOver: false
     }
     this.moveImage = this.moveImage.bind(this);
+    this.mouseExitContainer = this.mouseExitContainer.bind(this);
+    this.mouseEnterContainer = this.mouseEnterContainer.bind(this);
   }
 
   moveImage(event) {
     if (this.state.mouseOver) {
+      this.mouseExitContainer();
       const tolerance = 80;
       const par = document.getElementById('primary-image-parent').getBoundingClientRect();
       const xDist = par.width;
@@ -22,7 +25,7 @@ class PrimaryImage extends React.Component {
     }
   }
 
-  mouseExit(event){
+  mouseExitImage(event){
     this.setState({
       mouseOver: false
     })
@@ -31,18 +34,41 @@ class PrimaryImage extends React.Component {
     document.getElementById('primary-image').style.left = '0px';
   }
 
+  mouseExitContainer(){
+    document.getElementById('next-image-button').style.opacity = 0;
+    document.getElementById('last-image-button').style.opacity = 0;
+  }
+
+  mouseEnterContainer(){
+    document.getElementById('next-image-button').style.opacity = 1;
+    document.getElementById('last-image-button').style.opacity = 1;
+  }
+
   render() {
     return (
-      <div className="primary-image-parent" 
-      id="primary-image-parent"
-      onMouseMove={(event) => this.moveImage(event)}
-      onMouseEnter={() => this.setState({mouseOver: true})}
-      onMouseLeave={(event) => this.mouseExit(event)}>
-
-        <img
-        className="primary-image" 
-        id="primary-image"
-        src={this.props.image.img_url}/>
+      <div className="primary-image-section"
+        onMouseOver={() => this.mouseEnterContainer()}
+        onMouseLeave={(event) => this.mouseExitContainer()}>
+        <img 
+          className="last-image-button" 
+          id="last-image-button"
+          src="back.png"
+          onClick={() => this.props.handleChangeImage(-1)}/>
+        <div className="primary-image-parent" 
+        id="primary-image-parent"
+        onMouseMove={(event) => this.moveImage(event)}
+        onMouseEnter={() => this.setState({mouseOver: true})}
+        onMouseLeave={(event) => this.mouseExitImage(event)}>
+          <img
+          className="primary-image" 
+          id="primary-image"
+          src={this.props.image.img_url}/>
+        </div>
+        <img 
+          className="next-image-button" 
+          id="next-image-button"
+          src="back.png"
+          onClick={() => this.props.handleChangeImage(1)}/>
       </div>
     );
   }
