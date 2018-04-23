@@ -1,32 +1,49 @@
 class Thumbnails extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
 //if there are more less than 7 images hide the arrows
 
   render() {
     var result = this.props.images.map((image, index) => {
-      return <Thumbnail handleClick={this.props.handleClick} image={image} key={index}/>
+      let className = 'product-thumbnail';
+      if (image === this.props.primaryImage) {
+        className += ' selected-thumbnail';
+      }
+      return <Thumbnail handleClick={this.props.handleClick} image={image} key={index} class={className}/>
     })
+
+    let thumbnailScrollClass1 = 'thumbnail-scroll-up';
+    let thumbnailScrollClass2 = 'thumbnail-scroll-down';
+    if (this.props.images.length < 7) {
+      thumbnailScrollClass1 += ' invisible';
+      thumbnailScrollClass2 += ' invisible';
+    }
+
     return (
       <div className="thumbnail-parent">
-        <button className="thumbnail-scroll-button"></button>
+        <img 
+          className={thumbnailScrollClass1}
+          id="thumbnail-scroll-up"
+          src="back.png"
+        />
           <div className="thumbnails">
             {result}
           </div>
-        <button className="thumbnail-scroll-button bottom"></button>
+          <img 
+          className={thumbnailScrollClass2}
+          id="thumbnail-scroll-down"
+          src="back.png"
+        />
       </div>
     );
   }
 }
 
 class Thumbnail extends React.Component {
+
   render() {
     return (
       <div>
         <img
-        className="product-thumbnail" 
+        className={this.props.class}
         onClick={() => this.props.handleClick(this.props.image)}
         src={this.props.image.img_url}/>
       </div>

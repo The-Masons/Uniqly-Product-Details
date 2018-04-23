@@ -4,7 +4,7 @@ body{
 
 .thumbnails{
   float: left;
-  width: 70px;
+  width: 75px;
   height: 450px;
   overflow-y: hidden;
 }
@@ -18,7 +18,7 @@ body{
 }
 
 .thumbnail-parent{
-  width: 80px;
+  width: 83px;
   margin: 0;
   display: inline-block;
   align-content: center;
@@ -90,8 +90,21 @@ body{
 }
 
 .product-thumbnail{
+  padding: 1px;
   width: 67px;
   height: 73px;
+}
+
+.product-thumbnail:hover{
+  border: solid;
+  border-width: 1px;
+}
+
+.selected-thumbnail{
+  width: 67px;
+  height: 73px;
+  border: solid;
+  border-width: 1px;
 }
 
 .product-price{
@@ -273,10 +286,22 @@ body{
   cursor: pointer;
 }
 
-.thumbnail-scroll-button{
+.invisible{
+  opacity: 0 !important;
+}
+
+.thumbnail-scroll-up{
   align-self: center;
-  background: url("back.png") no-repeat;
-  transform: rotate(90deg);
+  transform: rotateZ(90deg);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  display: block;
+}
+
+.thumbnail-scroll-down{
+  align-self: center;
+  transform: rotateZ(270deg);
   width: 32px;
   height: 32px;
   background-size: cover;
