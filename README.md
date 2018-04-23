@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+The photos and product details components for the uniqly product page.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/The-Masons/Uniqly-Product-Details
+  - https://github.com/The-Masons/Uniqly-Reviews
+  - https://github.com/The-Masons/Uniqly-Image-Carousel
+  - https://github.com/The-Masons/Uniqly-Proxy-Robin
 
 ## Table of Contents
 
@@ -17,14 +17,28 @@
 
 ## Usage
 
-> Some usage instructions
+To start the development server:
+
+```sh
+npm run server-dev
+```
+
+To run webpack:
+
+```sh
+npm run react-dev
+```
+
+The default port is set to 3003.
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
+- React
+- React-DOM
+- ExpressJS
+- jQuery
+- Node-Postgres
 
 ## Development
 
@@ -33,7 +47,5 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
 ```
-
