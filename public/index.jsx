@@ -115,7 +115,7 @@ class ProductImages extends React.Component {
   render() {
     return (
       <div className="product-image-container">
-        <Thumbnails handleClick={this.handleClick} images={this.state.images}/>
+        <Thumbnails handleClick={this.handleClick} images={this.state.images} primaryImage={this.state.primaryImage}/>
         <PrimaryImage image={this.state.primaryImage} handleChangeImage={this.changePrimaryImage}/>
       </div>
     );
