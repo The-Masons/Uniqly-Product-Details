@@ -28,16 +28,16 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount(){
-    // fetch('/products/1')
-    //   .then(function(response) {
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     this.setState({
-    //       product: data
-    //     })
-    //   })
+    fetch('/products/1')
+      .then(function(response) {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          product: data
+        })
+      })
 
       fetch('/products/1/colors')
         .then((response) => {

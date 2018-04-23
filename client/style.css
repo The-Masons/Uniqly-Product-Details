@@ -153,6 +153,7 @@ body{
   border-bottom-style: solid;
   border-bottom-width: 1px;
   float: right;
+  cursor: pointer;
 }
 
 .primary-image-parent{
@@ -257,7 +258,11 @@ body{
 }
 
 .materials{
-  display: none;
+  display: block;
+}
+
+.hidden{
+  display: none !important;
 }
 
 .reviews_img{
@@ -278,6 +283,11 @@ body{
   border-bottom-color: rgb(190,190,190);
   border-bottom-style: solid;
   border-bottom-width: 2px;
+}
+
+.review-text:hover{
+  color: red;
+  border-bottom-color: red;
 }
 
 .reviewbg{
