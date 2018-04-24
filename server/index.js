@@ -24,10 +24,12 @@ app.get('/products/:productid', function (req, res) {
   db.query(query, (err, data) => {
     if(err){
       console.log('err', err);
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.end();
     } else {
       data = JSON.stringify(data.rows[0]);
       console.log('data', data);
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.end(data);      
     }
   });
@@ -38,10 +40,12 @@ app.get('/products/:productid/images', function (req, res) {
   db.query(query, (err, data) => {
     if(err){
       console.log('err', err);
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.end();
     } else {
       data = JSON.stringify(data.rows);
       console.log('data', data);
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.end(data);      
     }
   });
@@ -52,10 +56,12 @@ app.get('/products/:productid/colors', function (req, res) {
   db.query(query, (err, data) => {
     if(err){
       console.log('err', err);
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.end();
     } else {
       data = JSON.stringify(data.rows);
       console.log('data', data);
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.end(data);      
     }
   });

@@ -30,7 +30,7 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount(){
-    fetch('/products/1')
+    fetch('http://localhost:3003/products/1')
       .then(function(response) {
         return response.json();
       })
@@ -40,7 +40,7 @@ class ProductDetails extends React.Component {
         })
       })
 
-      fetch('/products/1/colors')
+      fetch('http://localhost:3003/products/1/colors')
         .then((response) => {
           return response.json();
         })
@@ -100,7 +100,7 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/products/1/images')
+    fetch('http://localhost:3003/products/1/images')
       .then(function(response) {
         return response.json();
       })
