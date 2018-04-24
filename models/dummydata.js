@@ -12,6 +12,7 @@ const skuLength = 7;
 
 
 populateDBWithRandomData = () => {
+  createTables();
   populateColorTable();
   populateNameTable();
   populateProductTable();
@@ -31,6 +32,54 @@ clearDB = () => {
   db.query('delete from sizes where id >= 0');
   db.query('delete from product_sizes where id >= 0');
   db.query('delete from product_colors where id >= 0');
+}
+
+createTables = () => {
+  db.query(`CREATE TABLE colors (
+    id INT PRIMARY KEY,
+    name TEXT,
+    img_url TEXT
+)`, () => {console.log('worked')});
+  db.query(`CREATE TABLE names (
+    id INT PRIMARY KEY,
+    name TEXT
+  )`, () => {console.log('worked')});
+  db.query(`CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name_id INT,
+    color_id INT,
+    price INT,
+    description TEXT,
+    material TEXT,
+    sku TEXT
+  )`, () => {console.log('worked')});
+  db.query(`CREATE TABLE images (
+    id INT PRIMARY KEY,
+    img_url TEXT,
+    color_id INT,
+    name_id INT,
+    isPrimary BOOL
+  )`, () => {console.log('worked')});
+  db.query(`CREATE TABLE product_colors (
+    id INT PRIMARY KEY,
+    product_id INT,
+    color_id INT
+  )`, () => {console.log('worked')});
+  db.query(`CREATE TABLE product_sizes (
+    id INT PRIMARY KEY,
+    product_id INT,
+    size_id INT
+  )`, () => {console.log('worked')});
+  db.query(`CREATE TABLE ratings (
+    id INT PRIMARY KEY,
+    rating INT,
+    product_id INT,
+    rating_count INT
+  )`, () => {console.log('worked')});
+  db.query(`CREATE TABLE sizes (
+    id INT PRIMARY KEY,
+    name TEXT
+  )`, () => {console.log('worked')});
 }
 
 populateColorTable = () => {
