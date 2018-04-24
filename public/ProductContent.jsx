@@ -9,8 +9,6 @@ const starImages = [
   "https://i.imgur.com/DYQgYtC.png"
 ]
 
-const back = "https://i.imgur.com/Q6KLD3s.png";
-
 class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
@@ -60,6 +58,7 @@ class ProductOverview extends React.Component {
               <div className="size-chart-text">SIZE CHART</div>
             </div>
           </div>
+          <div id="quick-add-app"></div>
       </div>
     );
   }
