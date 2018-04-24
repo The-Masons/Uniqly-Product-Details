@@ -10,7 +10,6 @@ const pool = new Pool({
 const insertIntoDatabase = (query, values, cb) => {
   pool.query(query, values)
         .then(res => {
-          client.release();
           cb(null, res);
         })
         .catch(err => {
