@@ -8,9 +8,7 @@ const pool = new Pool({
 })
 
 const insertIntoDatabase = (query, values, cb) => {
-  pool.connect()
-    .then(client => {
-      return client.query(query, values)
+  pool.query(query, values)
         .then(res => {
           client.release();
           cb(null, res);
@@ -19,16 +17,12 @@ const insertIntoDatabase = (query, values, cb) => {
           client.release();
           cb(err, null);
         })
-    })
 }
 
 const queryDatabase = (query, cb) => {
-  pool.connect()
-    .then(client => {
-      return client.query(query)
+  pool.query(query)
       .then(res => cb(null, res))
       .catch(e => cb(e, null))
-    })
 }
 
 const client = new Client({
