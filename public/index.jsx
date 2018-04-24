@@ -2,6 +2,8 @@ import Thumbnails from './Thumbnails.jsx';
 import PrimaryImage from './PrimaryImage.jsx';
 import ProductInfo from './ProductInfo.jsx';
 import ProductContent from './ProductContent.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -33,7 +35,6 @@ class ProductDetails extends React.Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         this.setState({
           product: data
         })
@@ -44,7 +45,6 @@ class ProductDetails extends React.Component {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
           this.setState({
             colors: data
           })

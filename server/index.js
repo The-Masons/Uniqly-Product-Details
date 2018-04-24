@@ -15,10 +15,10 @@ app.listen(port, function() {
 });
 
 app.get('/products/:productid', function (req, res) {
-  const query = `SELECT products.id, colors.name AS color, products.description, products.material, ratings.rating AS reviewScore, ratings.rating_count as reviewcount, names.name AS product_name, products.price, products.sku
+  const query = `SELECT products.id, colors.name AS color, products.description, products.material, ratings.rating AS reviewScore, ratings.rating_count AS reviewcount, names.name AS product_name, products.price, products.sku
     FROM products 
-    JOIN colors ON products.color_id = colors.id 
-    JOIN names ON products.name_id = names.id 
+    JOIN colors ON products.color_id = colors.id
+    JOIN names ON products.name_id = names.id
     JOIN ratings ON products.id = ratings.product_id
     WHERE products.id = ${req.params.productid}`
   db.query(query, (err, data) => {
@@ -34,7 +34,7 @@ app.get('/products/:productid', function (req, res) {
 });
 
 app.get('/products/:productid/images', function (req, res) {
-  const query = `SELECT * FROM images JOIN names ON names.id = images.name_id JOIN products ON products.name_id = names.id WHERE products.id = ${req.params.productid}`
+  const query = `SELECT images.img_url FROM images JOIN names ON names.id = images.name_id JOIN products ON products.name_id = names.id WHERE products.id = ${req.params.productid}`
   db.query(query, (err, data) => {
     if(err){
       console.log('err', err);

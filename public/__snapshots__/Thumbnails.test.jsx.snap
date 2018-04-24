@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thumbnails should render with the correct items 1`] = `
+<Thumbnails
+  handleClick={[MockFunction]}
+  images={
+    Array [
+      "https://vignette.wikia.nocookie.net/dragonballfanon/images/7/70/Random.png/revision/latest?cb=20161221030547",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHjAfupBUR-cZbyUu0Lc5alrBdwc0U6G5XqibuHoiyZddzWPU4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rGURD9A_TmE86bph6WJbZ_JRPHrsqqtVrSrVPi9OwuV2Ily30w",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOuCGDeH07tQxcIO4WJ2RK1kdIf8ipnZ06iBGzdmirYvKU9U5v",
+    ]
+  }
+  primaryImage="https://vignette.wikia.nocookie.net/dragonballfanon/images/7/70/Random.png/revision/latest?cb=20161221030547"
+>
+  <div
+    className="thumbnail-parent"
+  >
+    <img
+      className="thumbnail-scroll-up invisible"
+      id="thumbnail-scroll-up"
+      src="back.png"
+    />
+    <div
+      className="thumbnails"
+    >
+      <Thumbnail
+        class="product-thumbnail selected-thumbnail"
+        handleClick={[MockFunction]}
+        image="https://vignette.wikia.nocookie.net/dragonballfanon/images/7/70/Random.png/revision/latest?cb=20161221030547"
+        key="0"
+      >
+        <div>
+          <img
+            className="product-thumbnail selected-thumbnail"
+            onClick={[Function]}
+          />
+        </div>
+      </Thumbnail>
+      <Thumbnail
+        class="product-thumbnail"
+        handleClick={[MockFunction]}
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHjAfupBUR-cZbyUu0Lc5alrBdwc0U6G5XqibuHoiyZddzWPU4"
+        key="1"
+      >
+        <div>
+          <img
+            className="product-thumbnail"
+            onClick={[Function]}
+          />
+        </div>
+      </Thumbnail>
+      <Thumbnail
+        class="product-thumbnail"
+        handleClick={[MockFunction]}
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rGURD9A_TmE86bph6WJbZ_JRPHrsqqtVrSrVPi9OwuV2Ily30w"
+        key="2"
+      >
+        <div>
+          <img
+            className="product-thumbnail"
+            onClick={[Function]}
+          />
+        </div>
+      </Thumbnail>
+      <Thumbnail
+        class="product-thumbnail"
+        handleClick={[MockFunction]}
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOuCGDeH07tQxcIO4WJ2RK1kdIf8ipnZ06iBGzdmirYvKU9U5v"
+        key="3"
+      >
+        <div>
+          <img
+            className="product-thumbnail"
+            onClick={[Function]}
+          />
+        </div>
+      </Thumbnail>
+    </div>
+    <img
+      className="thumbnail-scroll-down invisible"
+      id="thumbnail-scroll-down"
+      src="back.png"
+    />
+  </div>
+</Thumbnails>
+`;

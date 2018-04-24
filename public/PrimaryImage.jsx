@@ -1,3 +1,5 @@
+import React from 'react';
+
 class PrimaryImage extends React.Component {
   constructor(props) {
     super(props);
@@ -25,13 +27,16 @@ class PrimaryImage extends React.Component {
     }
   }
 
-  mouseExitImage(event){
+  mouseExitImage(){
     this.setState({
       mouseOver: false
     })
-    document.getElementById('primary-image').style.transform = 'scale(1)';
-    document.getElementById('primary-image').style.top = '0px';
-    document.getElementById('primary-image').style.left = '0px';
+    var el = document.getElementById('primary-image');
+    if (el) {
+      el.style.transform = 'scale(1)';
+      el.style.top = '0px';
+      el.style.left = '0px';
+    }
   }
 
   mouseExitContainer(){
@@ -58,7 +63,7 @@ class PrimaryImage extends React.Component {
         id="primary-image-parent"
         onMouseMove={(event) => this.moveImage(event)}
         onMouseEnter={() => this.setState({mouseOver: true})}
-        onMouseLeave={(event) => this.mouseExitImage(event)}>
+        onMouseLeave={(event) => this.mouseExitImage()}>
           <img
           className="primary-image" 
           id="primary-image"

@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductContent should render with the correct items 1`] = `
+<ProductOverview
+  colors={
+    Array [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Red.svg/2000px-Red.svg.png",
+      "https://vignette.wikia.nocookie.net/joke-battles/images/0/0e/Green.jpg/revision/latest?cb=20170111231844",
+    ]
+  }
+  product={
+    Object {
+      "color": "43 Periwinkle",
+      "description": "A 100% Supima® cotton T-shirt thick enough to wear on its own or for layering.
+  The luxurious jersey material uses 100% Supima® cotton for a smooth feel, natural brightness and beautiful colors.
+  A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.
+  A narrower seam fold and stitching for a more delicate neckline.
+  With a flattering neckline.",
+      "material": "100% cotton
+  Machine washable
+  Imported  ",
+      "price": "9",
+      "product_name": "Women JWA EXTRA FINE COTTON SHIRT STRIPE LONG-SLEEVE DRESS",
+      "reviewcount": 8,
+      "reviewscore": 4.2,
+      "sku": "AOJ23F5",
+    }
+  }
+>
+  <div
+    className="product-content"
+  >
+    <div
+      className="product-actions"
+    >
+      <div
+        className="social-sharing"
+      >
+        <span
+          className="share-button"
+        >
+          Share
+        </span>
+        <span
+          className="button-divider"
+        >
+          |
+        </span>
+        <span
+          className="save-button"
+        >
+          Save
+        </span>
+      </div>
+    </div>
+    <div
+      className="product-name"
+    >
+      Women JWA EXTRA FINE COTTON SHIRT STRIPE LONG-SLEEVE DRESS
+    </div>
+    <div
+      className="sku"
+    >
+      sku# 
+      AOJ23F5
+    </div>
+    <div
+      className="review-parent"
+    >
+      <div
+        className="reviews_img"
+      >
+        <img
+          src="stars_4.png"
+        />
+      </div>
+      <span
+        className="review-text"
+      >
+        8 reviews
+      </span>
+    </div>
+    <div
+      className="product-price"
+    >
+      $
+      9
+      .99
+    </div>
+    <div
+      className="color-parent"
+    >
+      <span
+        className="color-label"
+      >
+        Color:
+      </span>
+       
+      <span
+        className="current-color"
+      >
+        43 Periwinkle
+      </span>
+      <div
+        className="product-colors"
+      >
+        <Color
+          key="0"
+        >
+          <div
+            className="product-color"
+          />
+        </Color>
+        <Color
+          key="1"
+        >
+          <div
+            className="product-color"
+          />
+        </Color>
+      </div>
+    </div>
+    <div
+      className="size-chart-section"
+    >
+      <div
+        className="size-chart-parent"
+      >
+        <img
+          src="size_chart.png"
+        />
+        <div
+          className="size-chart-text"
+        >
+          SIZE CHART
+        </div>
+      </div>
+    </div>
+  </div>
+</ProductOverview>
+`;

@@ -1,6 +1,6 @@
-class Thumbnails extends React.Component {
-//if there are more less than 7 images hide the arrows
+import React from 'react';
 
+class Thumbnails extends React.Component {
   render() {
     var result = this.props.images.map((image, index) => {
       let className = 'product-thumbnail';

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductInfo should render with the correct items 1`] = `
+<ProductInfo
+  description="It's good and you can wear it."
+  materials="This is the material for the product"
+>
+  <div
+    className="product-info"
+  >
+    <div
+      className="detail-header1 detail-header-selected"
+      onClick={[Function]}
+    >
+      PRODUCT DETAIL
+    </div>
+    <div
+      className="detail-header2"
+      onClick={[Function]}
+    >
+      MATERIALS & CARE
+    </div>
+    <div
+      className="tab-content"
+    >
+      <div
+        className="description"
+      >
+        It's good and you can wear it.
+      </div>
+      <div
+        className="materials hidden"
+      >
+        This is the material for the product
+      </div>
+    </div>
+  </div>
+</ProductInfo>
+`;

@@ -9,7 +9,17 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "client-test": "NODE_ENV=test jest --coverage",
+    "client-test -w": "NODE_ENV=test jest --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -17,13 +27,20 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "pg": "^7.4.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
     "request": "^2.85.0"
   },
   "devDependencies": {
+    "enzyme-to-json": "^3.3.3",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "express": "^4.16.3",
     "faker": "^4.1.0",
+    "jest": "^22.4.3",
     "nodemon": "^1.17.3",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"

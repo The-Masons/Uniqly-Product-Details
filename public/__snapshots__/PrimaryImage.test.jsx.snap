@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryImage should render with the correct items 1`] = `
+<PrimaryImage
+  handleChangeImage={[MockFunction]}
+  image="http://www.politifact.com/subjects/fake-news/"
+>
+  <div
+    className="primary-image-section"
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+  >
+    <img
+      className="last-image-button"
+      id="last-image-button"
+      onClick={[Function]}
+      src="back.png"
+    />
+    <div
+      className="primary-image-parent"
+      id="primary-image-parent"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+    >
+      <img
+        className="primary-image"
+        id="primary-image"
+      />
+    </div>
+    <img
+      className="next-image-button"
+      id="next-image-button"
+      onClick={[Function]}
+      src="back.png"
+    />
+  </div>
+</PrimaryImage>
+`;
