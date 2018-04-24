@@ -10,6 +10,7 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
+    "setup-db": "node models/dummydata.js",
     "client-test": "NODE_ENV=test jest --coverage",
     "client-test -w": "NODE_ENV=test jest --watch"
   },
