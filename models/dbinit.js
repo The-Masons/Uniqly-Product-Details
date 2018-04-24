@@ -47,3 +47,5 @@ createTables = () => {
     name TEXT
   )`, () => {console.log('worked')});
 }
+
+createTables();
