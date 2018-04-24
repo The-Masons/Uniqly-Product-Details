@@ -1,5 +1,7 @@
 import React from 'react';
 
+const back = "https://i.imgur.com/Q6KLD3s.png";
+
 class Thumbnails extends React.Component {
   render() {
     var result = this.props.images.map((image, index) => {
@@ -22,7 +24,7 @@ class Thumbnails extends React.Component {
         <img 
           className={thumbnailScrollClass1}
           id="thumbnail-scroll-up"
-          src="back.png"
+          src={back}
         />
           <div className="thumbnails">
             {result}
@@ -30,7 +32,7 @@ class Thumbnails extends React.Component {
           <img 
           className={thumbnailScrollClass2}
           id="thumbnail-scroll-down"
-          src="back.png"
+          src={back}
         />
       </div>
     );

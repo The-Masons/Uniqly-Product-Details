@@ -1,5 +1,16 @@
 import React from 'react';
 
+const starImages = [
+  "https://i.imgur.com/BWTowvx.gif",
+  "https://i.imgur.com/VZ89RCE.png",
+  "https://i.imgur.com/zd4DwiU.png",
+  "https://i.imgur.com/FvECFC4.png",
+  "https://i.imgur.com/5Rb5yY3.png",
+  "https://i.imgur.com/DYQgYtC.png"
+]
+
+const back = "https://i.imgur.com/Q6KLD3s.png";
+
 class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +43,7 @@ class ProductOverview extends React.Component {
           <div className="sku">sku# {prod.sku}</div>
           <div className="review-parent">
             <div className="reviews_img">
-              <img src={`stars_${stars}.png`}/>
+              <img src={starImages[stars]}/>
             </div> 
             <span className="review-text">{reviewText}</span>
           </div>
@@ -45,7 +56,7 @@ class ProductOverview extends React.Component {
           </div>
           <div className="size-chart-section">
             <div className="size-chart-parent">
-            <img src="size_chart.png" />
+            <img src="https://i.imgur.com/ntZVBxZ.png" />
               <div className="size-chart-text">SIZE CHART</div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 
+const back = "https://i.imgur.com/Q6KLD3s.png";
+
 class PrimaryImage extends React.Component {
   constructor(props) {
     super(props);
@@ -57,7 +59,7 @@ class PrimaryImage extends React.Component {
         <img 
           className="last-image-button" 
           id="last-image-button"
-          src="back.png"
+          src={back}
           onClick={() => this.props.handleChangeImage(-1)}/>
         <div className="primary-image-parent" 
         id="primary-image-parent"
@@ -72,7 +74,7 @@ class PrimaryImage extends React.Component {
         <img 
           className="next-image-button" 
           id="next-image-button"
-          src="back.png"
+          src={back}
           onClick={() => this.props.handleChangeImage(1)}/>
       </div>
     );
