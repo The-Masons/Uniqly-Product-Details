@@ -13,7 +13,6 @@ const insertIntoDatabase = (query, values, cb) => {
           cb(null, res);
         })
         .catch(err => {
-          client.release();
           cb(err, null);
         })
 }
