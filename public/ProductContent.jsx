@@ -72,8 +72,12 @@ class Color extends React.Component {
   }
 
   render() {
+    var divStyle = {
+      'backgroundColor': this.props.color
+    };
+
     return (
-      <div className="product-color"/>
+      <div style={divStyle} className="product-color"/>
     );
   }
 }
