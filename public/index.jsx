@@ -31,9 +31,7 @@ class ProductDetails extends React.Component {
 
   componentDidMount(){
     let id = window.location.href.split('/').pop();
-    console.log(id);
     (id.length > 0) ? null : id = '0';
-    console.log(id);
     fetch(`http://localhost:3003/productdetails/${id}`)
       .then(function(response) {
         return response.json();

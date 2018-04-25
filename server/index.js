@@ -31,7 +31,6 @@ app.get('/productdetails/:productid', function (req, res) {
     if(err){
       console.log('err', err);
       res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-      res.sendFile()
       res.end();
     } else {
       data = JSON.stringify(data.rows[0]);

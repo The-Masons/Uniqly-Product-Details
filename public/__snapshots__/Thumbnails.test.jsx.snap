@@ -19,7 +19,7 @@ exports[`Thumbnails should render with the correct items 1`] = `
     <img
       className="thumbnail-scroll-up invisible"
       id="thumbnail-scroll-up"
-      src="back.png"
+      src="https://i.imgur.com/Q6KLD3s.png"
     />
     <div
       className="thumbnails"
@@ -80,7 +80,7 @@ exports[`Thumbnails should render with the correct items 1`] = `
     <img
       className="thumbnail-scroll-down invisible"
       id="thumbnail-scroll-down"
-      src="back.png"
+      src="https://i.imgur.com/Q6KLD3s.png"
     />
   </div>
 </Thumbnails>
