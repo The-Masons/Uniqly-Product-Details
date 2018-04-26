@@ -32,7 +32,7 @@ class ProductDetails extends React.Component {
   componentDidMount(){
     let id = window.location.href.split('/').pop();
     (id.length > 0) ? null : id = '0';
-    fetch(`http://localhost:3003/productdetails/${id}`)
+    fetch(`/productdetails/${id}`)
       .then(function(response) {
         return response.json();
       })
@@ -42,7 +42,7 @@ class ProductDetails extends React.Component {
         })
       })
 
-      fetch(`http://localhost:3003/product/${id}/colors`)
+      fetch(`/product/${id}/colors`)
         .then((response) => {
           return response.json();
         })
@@ -102,7 +102,7 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3003/product/1/images')
+    fetch('/product/1/images')
       .then(function(response) {
         return response.json();
       })

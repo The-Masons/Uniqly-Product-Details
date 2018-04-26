@@ -45,7 +45,10 @@ createTables = () => {
   db.query(`CREATE TABLE IF NOT EXISTS sizes (
     id INT,
     name TEXT
-  )`, () => {console.log('worked')});
+  )`, () => {
+    console.log('worked')
+    return;
+  });
 }
 
 createTables();
