@@ -25,4 +25,5 @@ build/
 dist/
 
 client/bundle.js
+variable.env
 

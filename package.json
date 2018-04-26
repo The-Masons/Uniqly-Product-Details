@@ -13,7 +13,8 @@
     "setup-db": "node models/dummydata.js",
     "client-test": "NODE_ENV=test jest --coverage",
     "client-test -w": "NODE_ENV=test jest --watch",
-    "init-db": "node models/dbinit.js"
+    "init-db": "node models/dbinit.js",
+    "server-prod": "node server/index.js"
   },
   "jest": {
     "setupFiles": [
@@ -29,6 +30,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "pg": "^7.4.1",

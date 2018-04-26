@@ -19,7 +19,9 @@ populateDBWithRandomData = () => {
   populateSizeTable();
   populateRatingsTable();
   populateProdColorTable();
-  populateProdSizeTable();
+  populateProdSizeTable(() => {
+    return;
+  });
 }
 
 clearDB = () => {
@@ -87,14 +89,14 @@ populateProdColorTable = () => {
   }
 }
 
-populateProdSizeTable = () => {
+populateProdSizeTable = (cb) => {
   for(let i = 0; i < productCount; i++) {
     const availableSizes = Math.floor(Math.random() * sizes.length);
     for(let j = 0; j < availableSizes; j++) {
       const text = 'INSERT INTO product_sizes VALUES ($1, $2, $3)';
       const values = [i + j, i, j];
       db.insert(text, values, (err, data) => {
-        console.log(err, data);
+        cb(err, data);
       });
     }
   }
