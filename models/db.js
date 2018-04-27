@@ -1,10 +1,15 @@
 const { Pool, Client } = require('pg')
 
+const HOST = process.env.POSTGRES_HOST || '127.0.0.1';
+const PORT = process.env.POSTGRES_PORT || 5432;
+const DATABASE = process.env.POSTGRES_DB || 'uniqly';
+const USER = process.env.POSTGRES_USER || 'postgres';
+
 const pool = new Pool({
-  user: 'postgres',
-  host: '127.0.0.1',
-  database: 'uniqly',
-  port: 5432,
+  user: USER,
+  host: HOST,
+  database: DATABASE,
+  port: PORT
 })
 
 const insertIntoDatabase = (query, values, cb) => {
@@ -12,8 +17,8 @@ const insertIntoDatabase = (query, values, cb) => {
         .then(res => {
           cb(null, res);
         })
-        .catch(err => {
-          cb(err, null);
+        .catch(e => {
+          cb(e, null);
         })
 }
 
@@ -24,10 +29,10 @@ const queryDatabase = (query, cb) => {
 }
 
 const client = new Client({
-  user: 'postgres',
-  host: '127.0.0.1',
-  database: 'uniqly',
-  port: 5432,
+  user: USER,
+  host: HOST,
+  database: DATABASE,
+  port: PORT
 })
 client.connect();
 

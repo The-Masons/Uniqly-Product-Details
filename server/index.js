@@ -4,8 +4,8 @@ const parser = require('body-parser');
 const db = require('../models/db.js');
 const path = require('path');
 
-const HOST = process.env.DB_HOST || 'http://localhost';
-const PORT = process.env.DB_PORT || '3003';
+const HOST = process.env.HOST || 'http://localhost';
+const PORT = process.env.PORT || '3003';
 
 app.use(parser.text());
 app.use(parser.json());
@@ -19,7 +19,6 @@ app.get('/product/:productid', function (req, res) {
   res.setHeader('Access-Control-Allow-Origin', `*`);
   res.setHeader('Content-Type', 'text/html');
   res.send(constructHtmlDoc());
-  res.end();
 })
 
 const constructHtmlDoc = () => {
@@ -28,12 +27,12 @@ const constructHtmlDoc = () => {
   <head>
     <title>Uniqly Product Details</title>
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:900" rel="stylesheet">
-    <link rel="stylesheet" href="${HOST}:${PORT}/style.css"/>
+    <link rel="stylesheet" href="/style.css"/>
   </head>
     <body>
       <div class="product-images" id="product-images"></div>
       <div class="product-details" id="product-details"></div>
-      <script type="text/javascript" src="${HOST}:${PORT}/bundle.js"></script>
+      <script type="text/javascript" src="/bundle.js"></script>
     </body>
   </html>`
 }
@@ -54,7 +53,7 @@ app.get('/productdetails/:productid', function (req, res) {
       data = JSON.stringify(data.rows[0]);
       console.log('data', data);
       res.setHeader('Access-Control-Allow-Origin', `*`);
-      res.end(data);      
+      res.send(data);      
     }
   });
 });
@@ -70,7 +69,7 @@ app.get('/product/:productid/images', function (req, res) {
       data = JSON.stringify(data.rows);
       console.log('data', data);
       res.setHeader('Access-Control-Allow-Origin', `*`);
-      res.end(data);      
+      res.send(data);      
     }
   });
 })
