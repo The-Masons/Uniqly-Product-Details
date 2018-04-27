@@ -41,6 +41,9 @@ class ProductDetails extends React.Component {
           product: data
         })
       })
+      .catch((err) => {
+        throw err;
+      })
 
       fetch(`/product/${id}/colors`)
         .then((response) => {
@@ -50,6 +53,9 @@ class ProductDetails extends React.Component {
           this.setState({
             colors: data
           })
+        })
+        .catch((err) => {
+          throw err;
         })
   }
 
@@ -102,7 +108,7 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/product/1/images')
+    fetch(`/product/${id}/images`)
       .then(function(response) {
         return response.json();
       })
@@ -111,6 +117,9 @@ class ProductImages extends React.Component {
           images: data,
           primaryImage: data[0]
         })
+      })
+      .catch((err) => {
+        throw err;
       })
   }
 

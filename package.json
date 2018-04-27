@@ -1,9 +1,8 @@
 {
   "name": "uniqly-product-details",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "description": "product details page for Uniqly",
+  "author": "Steven Purn",
+  "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
   },
@@ -14,7 +13,8 @@
     "client-test": "NODE_ENV=test jest --coverage",
     "client-test -w": "NODE_ENV=test jest --watch",
     "init-db": "node models/dbinit.js",
-    "server-prod": "node server/index.js"
+    "start": "node server/index.js && webpack -d",
+    "docker": "npm run init-db & npm run setup-db && node server/index.js && webpack -d"
   },
   "jest": {
     "setupFiles": [
@@ -48,5 +48,9 @@
     "nodemon": "^1.17.3",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Masons/Uniqly-Product-Details.git"
   }
 }

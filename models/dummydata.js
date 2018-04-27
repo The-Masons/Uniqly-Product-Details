@@ -12,13 +12,27 @@ const skuLength = 7;
 
 
 populateDBWithRandomData = () => {
-  populateColorTable();
-  populateNameTable();
-  populateProductTable();
-  populateImageTable();
-  populateSizeTable();
-  populateRatingsTable();
-  populateProdColorTable();
+  populateColorTable(() => {
+    console.log('nothing');
+  });
+  populateNameTable(() => {
+    console.log('nothing');
+  });
+  populateProductTable(() => {
+    console.log('nothing');
+  });
+  populateImageTable(() => {
+    console.log('nothing');
+  });
+  populateSizeTable(() => {
+    console.log('nothing');
+  });
+  populateRatingsTable(() => {
+    console.log('nothing');
+  });
+  populateProdColorTable(() => {
+    console.log('nothing');
+  });
   populateProdSizeTable(() => {
     return;
   });
@@ -176,5 +190,7 @@ getRandomSku = () => {
   return result;  
 }
 
-clearDB();
-populateDBWithRandomData();
+setTimeout(() => {
+  clearDB();
+  populateDBWithRandomData();
+}, 8000)
