@@ -12,17 +12,17 @@ class Thumbnails extends React.Component {
       return <Thumbnail handleClick={this.props.handleClick} image={image} key={index} class={className}/>
     })
 
-    let thumbnailScrollClass1 = 'thumbnail-scroll-up';
-    let thumbnailScrollClass2 = 'thumbnail-scroll-down';
+    let thumbnailScrollUpClass = 'thumbnail-scroll-up';
+    let thumbnailScrollDownClass = 'thumbnail-scroll-down';
     if (this.props.images.length < 7) {
-      thumbnailScrollClass1 += ' invisible';
-      thumbnailScrollClass2 += ' invisible';
+      thumbnailScrollUpClass += ' invisible';
+      thumbnailScrollDownClass += ' invisible';
     }
 
     return (
       <div className="thumbnail-parent">
         <img 
-          className={thumbnailScrollClass1}
+          className={thumbnailScrollUpClass}
           id="thumbnail-scroll-up"
           src={back}
         />
@@ -30,7 +30,7 @@ class Thumbnails extends React.Component {
             {result}
           </div>
           <img 
-          className={thumbnailScrollClass2}
+          className={thumbnailScrollDownClass}
           id="thumbnail-scroll-down"
           src={back}
         />
