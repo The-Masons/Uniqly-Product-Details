@@ -20,12 +20,9 @@ class PrimaryImage extends React.Component {
   moveImage(event) {
     if (this.state.mouseOver) {
       this.mouseExitContainer();
-      const tolerance = 80;
       const par = event.target.parentNode.getBoundingClientRect();
-      const xDist = par.width;
-      const yDist = par.height;
-      const relX = -(event.clientX - par.left) + xDist / 2;
-      const relY = -(event.clientY - par.top) + yDist / 2;
+      const relX = -(event.clientX - par.left) + par.width / 2;
+      const relY = -(event.clientY - par.top) + par.height / 2;
       this.setState({
         xPos: relX,
         yPos: relY,
@@ -68,8 +65,8 @@ class PrimaryImage extends React.Component {
 
     return (
       <div className="primary-image-section"
-        onMouseOver={() => this.mouseEnterContainer()}
-        onMouseLeave={(event) => this.mouseExitContainer()}>
+        onMouseOver={this.mouseEnterContainer}
+        onMouseLeave={this.mouseExitContainer}>
         <img 
           className="last-image-button" 
           id="last-image-button"
@@ -80,7 +77,7 @@ class PrimaryImage extends React.Component {
         id="primary-image-parent"
         onMouseMove={this.moveImage}
         onMouseEnter={() => this.setState({mouseOver: true})}
-        onMouseLeave={(event) => this.mouseExitImage()}>
+        onMouseLeave={(event) => this.mouseExitImage(event)}>
           <img
           className="primary-image" 
           id="primary-image"
