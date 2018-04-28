@@ -62,7 +62,7 @@ class ProductDetails extends React.Component {
   render() {
     return (
       <div>
-        <ProductContent product={this.state.product} colors={this.state.colors}/>
+        <ProductContent product={this.state.product} colors={this.state.colors} colorHover={this.colorHover}/>
         <ProductInfo description={this.state.product.description} materials={this.state.product.material}/>
       </div>
     );

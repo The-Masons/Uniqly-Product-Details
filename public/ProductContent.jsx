@@ -72,7 +72,9 @@ class Color extends React.Component {
     };
 
     return (
-      <div style={divStyle} className="product-color"/>
+      <div 
+        style={divStyle} 
+        className="product-color" />
     );
   }
 }
