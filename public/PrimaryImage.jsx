@@ -6,7 +6,8 @@ class PrimaryImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mouseOver: false
+      mouseOver: false,
+      mouseHovered: false
     }
     this.moveImage = this.moveImage.bind(this);
     this.mouseExitContainer = this.mouseExitContainer.bind(this);
@@ -33,29 +34,32 @@ class PrimaryImage extends React.Component {
     this.setState({
       mouseOver: false
     })
-    var el = document.getElementById('primary-image');
-    if (el) {
-      el.style.transform = 'scale(1)';
-      el.style.top = '0px';
-      el.style.left = '0px';
-    }
   }
 
   mouseExitContainer(){
-    if(document.getElementById('next-image-button')){
-      document.getElementById('next-image-button').style.opacity = 0;
-      document.getElementById('last-image-button').style.opacity = 0;
-    }
+    this.setState({
+      mouseHovered: false
+    })
   }
 
   mouseEnterContainer(){
-    if(document.getElementById('next-image-button')) {
-      document.getElementById('next-image-button').style.opacity = 1;
-      document.getElementById('last-image-button').style.opacity = 1;
-    }
+    this.setState({
+      mouseHovered: true
+    })
   }
 
   render() {
+    const imageBtnStyle = {
+      opacity: Number(this.state.mouseHovered)
+    };
+
+    let primaryImgStyle = {}
+    if (this.state.mouseOver === false) {
+      primaryImgStyle.transform = 'scale(1)';
+      primaryImgStyle.top = '0px';
+      primaryImgStyle.left = '0px';
+    }
+
     return (
       <div className="primary-image-section"
         onMouseOver={() => this.mouseEnterContainer()}
@@ -64,6 +68,7 @@ class PrimaryImage extends React.Component {
           className="last-image-button" 
           id="last-image-button"
           src={back}
+          style={imageBtnStyle}
           onClick={() => this.props.handleChangeImage(-1)}/>
         <div className="primary-image-parent" 
         id="primary-image-parent"
@@ -73,12 +78,14 @@ class PrimaryImage extends React.Component {
           <img
           className="primary-image" 
           id="primary-image"
+          style={primaryImgStyle}
           src={this.props.image.img_url}/>
         </div>
         <img 
           className="next-image-button" 
           id="next-image-button"
           src={back}
+          style={imageBtnStyle}
           onClick={() => this.props.handleChangeImage(1)}/>
       </div>
     );
