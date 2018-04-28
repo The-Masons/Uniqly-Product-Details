@@ -22,6 +22,10 @@ test('should correctly display the header', () => {
   productInfo.instance().switchHeader();
 
   expect(productInfo.state('headerShowing')).toEqual(2);
+
+  productInfo.instance().switchHeader();
+
+  expect(productInfo.state('headerShowing')).toEqual(1);
 });
 
 test('should not switch headers if the header is already showing', () => {
@@ -35,6 +39,10 @@ test('should not switch headers if the header is already showing', () => {
   productInfo.instance().handleHeaderClick(1);
 
   expect(productInfo.state('headerShowing')).toEqual(1);
+  productInfo.instance().handleHeaderClick(2);
+
+  expect(productInfo.state('headerShowing')).toEqual(2);
+
 });
 
 });

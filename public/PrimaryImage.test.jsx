@@ -20,6 +20,19 @@ describe('PrimaryImage', () => {
       handleChangeImage={jest.fn()}
     />);
 
+    primaryImage.find('.primary-image-parent').simulate('mouseEnter');
+    primaryImage.find('.primary-image-parent').simulate('mouseMove');
+  
+    expect(primaryImage.state('mouseOver')).toEqual(true);
+    expect(primaryImage.state('scale')).toEqual(2);
+  });
+
+  test('should change mouseOver to true when image is hovered', () => {
+    const primaryImage = mount(<PrimaryImage 
+      image={image}
+      handleChangeImage={jest.fn()}
+    />);
+
     primaryImage.find('.primary-image-parent').simulate('mouseEnter')
   
     expect(primaryImage.state('mouseOver')).toEqual(true);
