@@ -32,7 +32,6 @@ class ProductInfo extends React.Component {
   }
 
   render() {
-    //decide which header should be selected & which content to render
     let h1Class = 'detail-header1';
     let h2Class = 'detail-header2';
     let descClass = 'description';
