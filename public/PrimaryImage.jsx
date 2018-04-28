@@ -53,7 +53,7 @@ class PrimaryImage extends React.Component {
       opacity: Number(this.state.mouseHovered)
     };
 
-    let primaryImgStyle = {}
+    const primaryImgStyle = {}
     if (this.state.mouseOver === false) {
       primaryImgStyle.transform = 'scale(1)';
       primaryImgStyle.top = '0px';
