@@ -42,13 +42,17 @@ class PrimaryImage extends React.Component {
   }
 
   mouseExitContainer(){
-    document.getElementById('next-image-button').style.opacity = 0;
-    document.getElementById('last-image-button').style.opacity = 0;
+    if(document.getElementById('next-image-button')){
+      document.getElementById('next-image-button').style.opacity = 0;
+      document.getElementById('last-image-button').style.opacity = 0;
+    }
   }
 
   mouseEnterContainer(){
-    document.getElementById('next-image-button').style.opacity = 1;
-    document.getElementById('last-image-button').style.opacity = 1;
+    if(document.getElementById('next-image-button')) {
+      document.getElementById('next-image-button').style.opacity = 1;
+      document.getElementById('last-image-button').style.opacity = 1;
+    }
   }
 
   render() {

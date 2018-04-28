@@ -25,4 +25,7 @@ build/
 dist/
 
 client/bundle.js
+variable.env
+docker-compose.yml
+dockerfile
 
