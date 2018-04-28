@@ -25,7 +25,7 @@ class ProductDetails extends React.Component {
         reviewscore: 4.2,
         reviewcount: 8
       },
-      colors: []
+      colors: [{name:"red"}, {name:"blue"}]
     }
   }
 

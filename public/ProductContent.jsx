@@ -17,15 +17,14 @@ class ProductOverview extends React.Component {
   render() {
     const prod = this.props.product;
     const colors = this.props.colors.map((color, index) => {
-      return <Color color={color.name} key={index} img={color.img_url}/>
+      return <Color color={color.name} key={index}/>
     })
-    let stars;
-    let reviewText;
+    let stars = 0;;
+    let reviewText = '';
     if(prod.reviewcount > 0){
       stars = Math.floor(prod.reviewscore);
       reviewText = prod.reviewcount + " reviews";
     } else {
-      stars = 0;
       reviewText = "write the first review";
     }
     return (
@@ -67,10 +66,6 @@ class ProductOverview extends React.Component {
 export default ProductOverview;
 
 class Color extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     var divStyle = {
       'backgroundColor': this.props.color
