@@ -16,7 +16,7 @@ describe('ProductInfo', () => {
     expect(productInfo).toMatchSnapshot();
   });
 
-test('should correctly display the ', () => {
+test('should correctly display the header', () => {
   const productInfo = mount(<ProductInfo />);
 
   productInfo.instance().switchHeader();

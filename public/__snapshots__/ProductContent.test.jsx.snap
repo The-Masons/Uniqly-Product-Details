@@ -109,6 +109,11 @@ exports[`ProductContent should render with the correct items 1`] = `
         >
           <div
             className="product-color"
+            style={
+              Object {
+                "backgroundColor": undefined,
+              }
+            }
           />
         </Color>
         <Color
@@ -116,6 +121,11 @@ exports[`ProductContent should render with the correct items 1`] = `
         >
           <div
             className="product-color"
+            style={
+              Object {
+                "backgroundColor": undefined,
+              }
+            }
           />
         </Color>
       </div>
