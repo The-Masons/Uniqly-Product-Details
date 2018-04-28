@@ -72,13 +72,13 @@ class ProductDetails extends React.Component {
 class ProductImages extends React.Component {
   constructor(props) {
     super(props);
-    const images = ["https://i.ytimg.com/vi/5G5Gv-c4lsY/maxresdefault.jpg",
-    "http://images2.fanpop.com/image/photos/8800000/NYR-3-new-york-rangers-8836300-1024-768.jpg",
-    "https://www.denverpost.com/wp-content/uploads/2018/01/nathan-mackinnon-vs-rangers.jpg?w=489",
-    "https://media.gq.com/photos/5583ca8f3655c24c6c96de8f/master/w_800/style-blogs-the-gq-eye-ny-rangers-fb-shot.jpg",
-    "https://www.denverpost.com/wp-content/uploads/2018/01/nathan-mackinnon-vs-rangers.jpg?w=489",
-    "https://media.gq.com/photos/5583ca8f3655c24c6c96de8f/master/w_800/style-blogs-the-gq-eye-ny-rangers-fb-shot.jpg",
-    "https://1.bp.blogspot.com/-ZdaITVR2dzU/WFl_sRTG1dI/AAAAAAAACo4/HhQYCxews6I0DsHdmJWtVDwdqKpexDT_gCLcB/s640/img25378012.jpg"
+    const images = [{ img_url: "https://i.ytimg.com/vi/5G5Gv-c4lsY/maxresdefault.jpg"},
+    { img_url: "http://images2.fanpop.com/image/photos/8800000/NYR-3-new-york-rangers-8836300-1024-768.jpg"},
+    { img_url: "https://www.denverpost.com/wp-content/uploads/2018/01/nathan-mackinnon-vs-rangers.jpg?w=489"},
+    { img_url: "https://media.gq.com/photos/5583ca8f3655c24c6c96de8f/master/w_800/style-blogs-the-gq-eye-ny-rangers-fb-shot.jpg"},
+    { img_url: "https://www.denverpost.com/wp-content/uploads/2018/01/nathan-mackinnon-vs-rangers.jpg?w=489"},
+    { img_url: "https://media.gq.com/photos/5583ca8f3655c24c6c96de8f/master/w_800/style-blogs-the-gq-eye-ny-rangers-fb-shot.jpg"},
+    { img_url: "https://1.bp.blogspot.com/-ZdaITVR2dzU/WFl_sRTG1dI/AAAAAAAACo4/HhQYCxews6I0DsHdmJWtVDwdqKpexDT_gCLcB/s640/img25378012.jpg"}
     ]
     this.state = {
       images: images,
@@ -108,20 +108,20 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    let id = window.location.href.split('/').pop();
-    fetch(`/product/${id}/images`)
-      .then(function(response) {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({
-          images: data,
-          primaryImage: data[0]
-        })
-      })
-      .catch((err) => {
-        throw err;
-      })
+    // let id = window.location.href.split('/').pop();
+    // fetch(`/product/${id}/images`)
+    //   .then(function(response) {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     this.setState({
+    //       images: data,
+    //       primaryImage: data[0]
+    //     })
+    //   })
+    //   .catch((err) => {
+    //     throw err;
+    //   })
   }
 
   render() {

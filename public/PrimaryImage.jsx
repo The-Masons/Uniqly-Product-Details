@@ -68,8 +68,8 @@ class PrimaryImage extends React.Component {
 
     return (
       <div className="primary-image-section"
-        onMouseOver={this.mouseEnterContainer}
-        onMouseLeave={this.mouseExitContainer}>
+        onMouseOver={() => this.mouseEnterContainer()}
+        onMouseLeave={(event) => this.mouseExitContainer()}>
         <img 
           className="last-image-button" 
           id="last-image-button"
@@ -80,7 +80,7 @@ class PrimaryImage extends React.Component {
         id="primary-image-parent"
         onMouseMove={this.moveImage}
         onMouseEnter={() => this.setState({mouseOver: true})}
-        onMouseLeave={this.mouseExitImage}>
+        onMouseLeave={(event) => this.mouseExitImage()}>
           <img
           className="primary-image" 
           id="primary-image"
