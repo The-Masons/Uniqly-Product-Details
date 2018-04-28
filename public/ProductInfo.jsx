@@ -27,7 +27,6 @@ class ProductInfo extends React.Component {
     if (this.state.headerShowing === headerClicked) {
       return;
     }
-
     this.switchHeader();
   }
 

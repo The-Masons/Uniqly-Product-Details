@@ -46,12 +46,10 @@ app.get('/productdetails/:productid', function (req, res) {
     WHERE products.id = ${req.params.productid}`
   db.query(query, (err, data) => {
     if(err){
-      console.log('err', err);
       res.setHeader('Access-Control-Allow-Origin', `*`);
       res.end();
     } else {
       data = JSON.stringify(data.rows[0]);
-      console.log('data', data);
       res.setHeader('Access-Control-Allow-Origin', `*`);
       res.send(data);      
     }
@@ -62,12 +60,10 @@ app.get('/product/:productid/images', function (req, res) {
   const query = `SELECT images.img_url FROM images JOIN names ON names.id = images.name_id JOIN products ON products.name_id = names.id WHERE products.id = ${req.params.productid}`
   db.query(query, (err, data) => {
     if(err){
-      console.log('err', err);
       res.setHeader('Access-Control-Allow-Origin', `*`);
       res.end();
     } else {
       data = JSON.stringify(data.rows);
-      console.log('data', data);
       res.setHeader('Access-Control-Allow-Origin', `*`);
       res.send(data);      
     }
@@ -78,12 +74,10 @@ app.get('/product/:productid/colors', function (req, res) {
   const query = `SELECT * FROM product_colors JOIN colors ON colors.id = product_colors.color_id WHERE product_colors.product_id = ${req.params.productid}`
   db.query(query, (err, data) => {
     if(err){
-      console.log('err', err);
       res.setHeader('Access-Control-Allow-Origin', `*`);
       res.end();
     } else {
       data = JSON.stringify(data.rows);
-      console.log('data', data);
       res.setHeader('Access-Control-Allow-Origin', `*`);
       res.end(data);      
     }

@@ -4,7 +4,7 @@ const productCount = 100;
 const colorCount = 4;
 const sizes = ['small', 'medium', 'large', 'extra large'];
 const sex = ["Men's", "Women's"];
-const modifiers = ['camo', 'cargo', 'khaki', 'denim', 'plaid', 'corduroy'];
+const modifiers = ['camo', 'cargo', 'khaki', 'denim', 'plaid', 'corduroy', 'striped', 'classic fit', 'relaxed'];
 const clothingType = ['shirt', 'dress', 'pants', 'shorts', 'skirt', 'tank top', 'socks'];
 const maxRating = 5;
 const colors = ['red', 'green', 'blue', 'yellow', 'grey', 'black', 'white'];
@@ -13,25 +13,18 @@ const skuLength = 7;
 
 populateDBWithRandomData = () => {
   populateColorTable(() => {
-    console.log('nothing');
   });
   populateNameTable(() => {
-    console.log('nothing');
   });
   populateProductTable(() => {
-    console.log('nothing');
   });
   populateImageTable(() => {
-    console.log('nothing');
   });
   populateSizeTable(() => {
-    console.log('nothing');
   });
   populateRatingsTable(() => {
-    console.log('nothing');
   });
   populateProdColorTable(() => {
-    console.log('nothing');
   });
   populateProdSizeTable(() => {
     return;
