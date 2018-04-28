@@ -20,4 +20,15 @@ describe('Thumbnails', () => {
       );
     expect(thumbnails).toMatchSnapshot();
   });
+
+  test('should render with the correct items', () => {
+    const thumbnails = mount(
+      <Thumbnails
+        handleClick={jest.fn()} 
+        images={images} 
+        primaryImage={primaryImage}
+        />
+      );
+    expect(thumbnails).toMatchSnapshot();
+  });
 });

@@ -7,7 +7,10 @@ class PrimaryImage extends React.Component {
     super(props);
     this.state = {
       mouseOver: false,
-      mouseHovered: false
+      mouseHovered: false,
+      xPos: 0,
+      yPos: 0,
+      scale: 1
     }
     this.moveImage = this.moveImage.bind(this);
     this.mouseExitContainer = this.mouseExitContainer.bind(this);
@@ -18,20 +21,24 @@ class PrimaryImage extends React.Component {
     if (this.state.mouseOver) {
       this.mouseExitContainer();
       const tolerance = 80;
-      const par = document.getElementById('primary-image-parent').getBoundingClientRect();
+      const par = event.target.parentNode.getBoundingClientRect();
       const xDist = par.width;
       const yDist = par.height;
-      let relX = -(event.clientX - par.left) + xDist / 2;
-      let relY = -(event.clientY - par.top) + yDist / 2;
-
-      document.getElementById('primary-image').style.transform = 'scale(2)';
-      document.getElementById('primary-image').style.top = relY + 'px';
-      document.getElementById('primary-image').style.left = relX + 'px';
+      const relX = -(event.clientX - par.left) + xDist / 2;
+      const relY = -(event.clientY - par.top) + yDist / 2;
+      this.setState({
+        xPos: relX,
+        yPos: relY,
+        scale: 2
+      })
     }
   }
 
   mouseExitImage(){
     this.setState({
+      xPos: 0,
+      yPos: 0,
+      scale: 1,
       mouseOver: false
     })
   }
@@ -53,11 +60,10 @@ class PrimaryImage extends React.Component {
       opacity: Number(this.state.mouseHovered)
     };
 
-    const primaryImgStyle = {}
-    if (this.state.mouseOver === false) {
-      primaryImgStyle.transform = 'scale(1)';
-      primaryImgStyle.top = '0px';
-      primaryImgStyle.left = '0px';
+    const primaryImgStyle = {
+      transform: `scale(${this.state.scale})`,
+      top: `${this.state.yPos}px`,
+      left: `${this.state.xPos}px`
     }
 
     return (

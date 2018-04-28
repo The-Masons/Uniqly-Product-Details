@@ -108,6 +108,7 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
+    let id = window.location.href.split('/').pop();
     fetch(`/product/${id}/images`)
       .then(function(response) {
         return response.json();
