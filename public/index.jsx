@@ -108,20 +108,20 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    // let id = window.location.href.split('/').pop();
-    // fetch(`/product/${id}/images`)
-    //   .then(function(response) {
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     this.setState({
-    //       images: data,
-    //       primaryImage: data[0]
-    //     })
-    //   })
-    //   .catch((err) => {
-    //     throw err;
-    //   })
+    let id = window.location.href.split('/').pop();
+    fetch(`/product/${id}/images`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          images: data,
+          primaryImage: data[0]
+        })
+      })
+      .catch((err) => {
+        throw err;
+      })
   }
 
   render() {
